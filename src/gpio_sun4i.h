@@ -1,20 +1,9 @@
-#ifndef _GPIO_LIB_H_
-#define _GPIO_LIB_H_
+#ifndef _GPIO_SUN4I_H_
+#define _GPIO_SUN4I_H_
 
-#include <string>
-#include <stdint.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <getopt.h>
-#include <fcntl.h>
-#include <sys/ioctl.h>
-#include <inttypes.h>
-#include <linux/types.h>
-
-using namespace std;
 
 #define SW_PORTC_IO_BASE 0x01c20800
+
 
 #define SUNXI_GPIO_A	0
 #define SUNXI_GPIO_B	1
@@ -37,6 +26,7 @@ using namespace std;
 #define INPUT   0
 #define OUTPUT  1
 #define PER     2
+
 
 struct sunxi_gpio {
     unsigned int cfg[4];
@@ -156,16 +146,17 @@ enum sunxi_gpio_number {
 
 class GPIO {
 public:
-	GPIO(void);
+        GPIO(void);
         int err;
-	int sunxi_gpio_input(unsigned int pin);
-	int sunxi_gpio_set_cfgpin(unsigned int pin, unsigned int val);
-	int sunxi_gpio_get_cfgpin(unsigned int pin);
-	int sunxi_gpio_output(unsigned int pin, unsigned int val);
-	void sunxi_gpio_cleanup(void);
+        int sunxi_gpio_input(unsigned int pin);
+        int sunxi_gpio_set_cfgpin(unsigned int pin, unsigned int val);
+        int sunxi_gpio_get_cfgpin(unsigned int pin);
+        int sunxi_gpio_output(unsigned int pin, unsigned int val);
+        void sunxi_gpio_cleanup(void);
 private:
-	unsigned int SUNXI_PIO_BASE;
-	long int *gpio_map;
+        unsigned int SUNXI_PIO_BASE;
+        long int *gpio_map;
 };
+
 
 #endif

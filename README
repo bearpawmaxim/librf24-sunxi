@@ -1,1 +1,3 @@
-This is the adaptation of popular library RF24 for Allwinner A10/A20 devices
+This is an adaptation of popular nRF24L01(+) library RF24 for Allwinner A10/A20 devices
+
+

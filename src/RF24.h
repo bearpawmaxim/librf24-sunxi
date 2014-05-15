@@ -17,7 +17,11 @@
 
 #include "RF24_config.h"
 #include "spi.h"
-#include "gpio.h"
+#ifdef GPIO_SUN7I
+	#include "gpio_sun7i.h"
+#elif defined GPIO_SUN4I
+	#include "gpio_sun4i.h"
+#endif
 
 
 void __msleep(int milisec);
