@@ -1,3 +1,15 @@
 This is an adaptation of popular nRF24L01(+) library RF24 for Allwinner A10/A20 devices
 
+To build sun7i (a20) version, type
+	make librf24-sun7i
+
+To build sun4i (a10) version, type
+	make librf24-sun4i
+
+To install library, type
+	sudo make install
+
+To make tests, type
+	cd test/
+	make
 
